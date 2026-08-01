@@ -7,7 +7,7 @@ def get_ip_address(url):
     try:
         # Extract hostname from URL
         print(f"Resolving server for {url}")
-        hostname = url.split("//")[-1].split("/")[0]
+        hostname = url.split("://")[-1].split("/")[0]
 
         print(f"Resolving IP address of {hostname}...")
         ip_address = socket.gethostbyname(hostname)
