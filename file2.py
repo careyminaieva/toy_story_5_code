@@ -1,11 +1,9 @@
 def launch_gps_tracker(ip_address):
     try:
         print(f"LAUNCHING GPS TRACKER for {ip_address}")
-        result = subprocess.run(
-            [traceutils.gps_trk, ip_address],
-            capture_output=True
+        result = subprocess.run([traceutils.gps_tracker, ip_address],
+                                capture_output=True, text=True, check=True
         )
-
         print(result.stdout)
 
     except FileNotFoundError:
